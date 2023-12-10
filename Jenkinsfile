@@ -21,7 +21,7 @@ pipeline {
                 script {
                     // Run Docker commands inside a Docker container
                     docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIALS_ID}") {
-                        docker.image('docker:latest').inside {
+                        docker.image('blamp2/final:latest').inside {
                             // Build Docker image
                             sh "docker build -t ${DOCKER_IMAGE}:${IMAGE_TAG} ."
                         }
