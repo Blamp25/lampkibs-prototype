@@ -1,5 +1,5 @@
 # Use an official base image
-FROM some_base_image
+FROM latest
 
 # Add your application files
 COPY . /app
