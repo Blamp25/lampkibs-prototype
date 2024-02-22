@@ -1,22 +1,5 @@
-# Use an official Node.js runtime as a parent image
-FROM node:14-slim
-
-# Set the working directory to /app
-WORKDIR /app
-
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
-
-# Install app dependencies
-RUN npm install
-
-# Copy the application code into the container at /app
-COPY . .
-
-# Make port 3000 available to the world outside this container
-EXPOSE 3000
-
-# Run the application
-CMD ["npm", "start"]
-
-
+ROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY index.html /usr/share/nginx/html/index.html
+COPY style.css /usr/share/nginx/html/style.css
