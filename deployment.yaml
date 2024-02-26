@@ -41,7 +41,7 @@ spec:
   - host: devops0.cit.regionals.miamioh.edu
     http:
       paths:
-      - path: \
+      - path: 
         pathType: ImplementationSpecific
         backend: 
           service:
